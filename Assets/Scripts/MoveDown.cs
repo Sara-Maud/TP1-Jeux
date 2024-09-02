@@ -18,6 +18,6 @@ public class MoveDown : MonoBehaviour
     void Update()
     {
         
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+            transform.Translate(new Vector3(1,0,1) * speed * Time.deltaTime);
     }
 }
