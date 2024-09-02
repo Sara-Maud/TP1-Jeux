@@ -27,7 +27,7 @@ public class SpawnAnimal : MonoBehaviour
         {
             //Spawner un obstacle et reset le progrès
             progress = 0f;
-            SpawnObstacle();
+            SpawnAnimaux();
 
             //Prochain délai est aléatoire autour de repeatDelay
             nextDelay = Random.Range(0.85f * repeatDelay, 1.15f * repeatDelay);
@@ -35,7 +35,7 @@ public class SpawnAnimal : MonoBehaviour
 
     }
 
-    void SpawnObstacle()
+    void SpawnAnimaux()
     {
         int index = Random.Range(0, objectPrefabs.Length);
         repeatDelay *= 0.99f;

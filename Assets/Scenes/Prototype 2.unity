@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 319774177}
   - component: {fileID: 319774176}
+  - component: {fileID: 319774178}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -266,6 +267,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &319774178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319774174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c85daa56d300d44996b2339b610749c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs: {fileID: 126446, guid: c2f4b43f266dc11439efef86830dafb4, type: 3}
+  player: {fileID: 480466470}
 --- !u!1 &425805626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1168,14 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
