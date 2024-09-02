@@ -39,6 +39,7 @@ public class SpawnAnimal : MonoBehaviour
     {
         int index = Random.Range(0, objectPrefabs.Length);
         repeatDelay *= 0.99f;
-        Instantiate(objectPrefabs[index], spawnPos, objectPrefabs[index].transform.rotation);
+        GameObject animal = objectPrefabs[index];
+        Instantiate(animal, spawnPos, animal.transform.rotation);
     }
 }
