@@ -988,9 +988,10 @@ GameObject:
   - component: {fileID: 423370}
   - component: {fileID: 9587438}
   - component: {fileID: 5271572951866256402}
+  - component: {fileID: -5042860476120275068}
   m_Layer: 0
-  m_Name: Animal_Horse_Black
-  m_TagString: Untagged
+  m_Name: Animal_Horse_Black 1
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1049,6 +1050,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34a59f41d2c4af498db5f89e0c6f2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &-5042860476120275068
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139514}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &139532
 GameObject:
   m_ObjectHideFlags: 0
