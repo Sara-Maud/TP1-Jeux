@@ -20,8 +20,8 @@ public class MoveFood : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if(collision.gameObject.CompareTag("Animal")) {
+        if(collision.gameObject.CompareTag("Animal")) {
             Destroy(gameObject);
-        //}
+        }
     }
 }
