@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 9567898}
   - component: {fileID: 3584504279933175472}
   - component: {fileID: -336945819012751441}
+  - component: {fileID: -6641485696298592336}
   m_Layer: 0
   m_Name: Animal_Chicken_White 1
   m_TagString: Animal
@@ -237,6 +238,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &-6641485696298592336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120214}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 30, z: 20}
+  m_Center: {x: 0, y: 15, z: 0}
 --- !u!1 &130812
 GameObject:
   m_ObjectHideFlags: 0
