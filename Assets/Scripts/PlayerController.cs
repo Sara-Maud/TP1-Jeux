@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 10f;
     public float horizontalInput;
-    public bool isOnLimit = false;
+    private float limiteGauche = -19;
+    private float limiteDroite = 19;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,25 +24,23 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Faire bouger le personnage
         horizontalInput = Input.GetAxis("Horizontal");
-        if (!isOnLimit)
-        transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+        
+            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+        
+
+        //Faire spawner la nourriture
         if (Input.GetKeyDown(KeyCode.Space))
         {
             spawnNourriturePos = transform.position;
             SpawnBouffe();
         }
     }
+    //Méthode pour faire spawner la nourriture
     void SpawnBouffe()
     {
         Instantiate(objectPrefabs, spawnNourriturePos, objectPrefabs.transform.rotation);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        isOnLimit = true;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isOnLimit = false;
-    }
+
 }
