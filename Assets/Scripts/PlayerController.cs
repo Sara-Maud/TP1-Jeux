@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRB;
+    private Animator playerAnim;
 
     public GameObject objectPrefabs;
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         //Faire spawner la nourriture
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            playerAnim.SetTrigger("Tir_Trig");
             spawnNourriturePos = transform.position;
             SpawnBouffe();
         }
