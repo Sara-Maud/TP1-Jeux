@@ -6,7 +6,7 @@ public class SpawnAnimal : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
 
-    private Vector3 spawnPos = new Vector3(-25, 0, 25);
+    private Vector3 spawnPos = new Vector3(-15, 0, 25);
 
     private float repeatDelay = 2f;
     private float nextDelay = 2f;
