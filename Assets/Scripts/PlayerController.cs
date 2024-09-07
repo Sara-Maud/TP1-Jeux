@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 10f;
     public float horizontalInput;
-    private float limiteGauche = -19;
-    private float limiteDroite = 19;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +25,7 @@ public class PlayerController : MonoBehaviour
         //Faire bouger le personnage
         horizontalInput = Input.GetAxis("Horizontal");
         
-            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        
-
+        transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
         //Faire spawner la nourriture
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -42,5 +38,4 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(objectPrefabs, spawnNourriturePos, objectPrefabs.transform.rotation);
     }
-
 }
