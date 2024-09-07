@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 68712705}
   m_Layer: 0
   m_Name: limite droite
-  m_TagString: Untagged
+  m_TagString: Mur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -809,7 +809,7 @@ GameObject:
   - component: {fileID: 1019966058}
   m_Layer: 0
   m_Name: limite gauche
-  m_TagString: Untagged
+  m_TagString: Mur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -858,7 +858,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019966055}
   serializedVersion: 4
-  m_Mass: 10000
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1277,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
@@ -1324,6 +1328,10 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_CullingMode

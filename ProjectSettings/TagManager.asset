@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Animal
   - Environment
+  - Mur
   layers:
   - Default
   - TransparentFX
