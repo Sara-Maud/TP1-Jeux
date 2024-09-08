@@ -70,3 +70,10 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Course Library/Prefabs/Animals prefabs/vachebrune.prefab.meta
+Assets/Course Library/Prefabs/Animals prefabs/poule.prefab.meta
+Assets/Course Library/Prefabs/Animals prefabs/vachebrune.prefab
+Assets/Course Library/Prefabs/Animals prefabs/coq.prefab.meta
+Assets/Course Library/Prefabs/Animals prefabs/chevalbrun.prefab.meta
+Assets/Course Library/Prefabs/Animals prefabs/chevalnoir.prefab.meta
+Assets/Course Library/Prefabs/Animals prefabs.meta

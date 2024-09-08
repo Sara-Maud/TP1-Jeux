@@ -6,7 +6,7 @@ public class FoodController : MonoBehaviour
 {
     private Rigidbody foodRB;
     private float speed = 5;
-    private float topBound = 15;
+    private float topBound = -4.85f;
     // Start is called before the first frame update
     void Start()
     {

@@ -7,6 +7,7 @@ TagManager:
   - Animal
   - Environment
   - Mur
+  - Projectile
   layers:
   - Default
   - TransparentFX

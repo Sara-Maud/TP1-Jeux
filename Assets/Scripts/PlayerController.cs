@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRB;
     private Animator playerAnim;
-    public GameObject objectPrefabs;
     private Vector3 spawnNourriturePos = new Vector3(0, 0, 0);
     public GameObject[] projectilesPrefabs;
     public int projectileIndex;
