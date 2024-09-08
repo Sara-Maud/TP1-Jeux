@@ -5,7 +5,7 @@ using UnityEngine;
 public class FoodController : MonoBehaviour
 {
     private Rigidbody foodRB;
-    private float speed = 5;
+    private float speed = 15f;
     private float topBound = -4.85f;
     // Start is called before the first frame update
     void Start()

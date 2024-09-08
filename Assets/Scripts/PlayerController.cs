@@ -6,7 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRB;
     private Animator playerAnim;
-    private Vector3 spawnNourriturePos = new Vector3(0, 0, 0);
+    private Vector3 spawnNourriturePos;
+
+
     public GameObject[] projectilesPrefabs;
     public int projectileIndex;
 
@@ -23,14 +25,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Faire bouger le personnage
         horizontalInput = Input.GetAxis("Horizontal");
 
-        transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        //Faire spawner la nourriture
-        SpawnBouffe();
-
+       
+            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+            //Faire spawner la nourriture
+            SpawnBouffe();
+        
     }
     //Méthode pour faire spawner la nourriture
     void SpawnBouffe()
@@ -39,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             int projectileIndex = Random.Range(0, projectilesPrefabs.Length);
             playerAnim.SetTrigger("Tir_Trig");
-            spawnNourriturePos = transform.position;
+            spawnNourriturePos = new Vector3(transform.position.x, transform.position.y +2, transform.position.z);
             Instantiate(projectilesPrefabs[projectileIndex], spawnNourriturePos, projectilesPrefabs[projectileIndex].transform.rotation);
         }
     }
