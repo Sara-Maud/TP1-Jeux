@@ -6,9 +6,11 @@ public class SpawnAnimal : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
     private float spawnRangeX = 25;
-    private float spawnPosZ = 25;
+    private float spawnMinZ = -10;
+    private float spawnMaxZ = 25;
+
     private float repeatDelay = 2f;
-    private float nextDelay = 2f;
+    private float nextDelay = 5f;
     private float progress;
     public Vector3 spawnPos;
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class SpawnAnimal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+         spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, Random.Range(spawnMinZ, spawnMaxZ));
 
         progress += Time.deltaTime;
 

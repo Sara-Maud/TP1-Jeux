@@ -10,38 +10,38 @@ public class AnimalController : MonoBehaviour
             ➢ Gère les animations de l’animal
             ➢ Si gameOver, l’animal doit agir d’une autre façon (au choix de l’étudiant)*/
 
-    public bool gameOver = false;
-    public bool affame = true;
-    public Animator animator;
-    public float moveSpeed = 1.5f;
 
+    public float speed = 3f;
+    private Vector3 direction;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        // Initialiser la direction de l'animal
+        direction = Vector3.forward;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (gameOver)
+        // Déplacer l'animal dans la direction actuelle
+        transform.Translate(direction * speed * Time.deltaTime);
+
+        // Vérifier si l'animal touche les bords gauche ou droit
+        if (transform.position.x <= -25 || transform.position.x >= 25)
         {
-            animator.SetTrigger("GameOver"); return;
+            // Inverser la direction sur l'axe X
+            direction.x = -direction.x;
+
+            // Faire pivoter l'animal pour qu'il ne marche pas de reculons
+            transform.Rotate(0, 180, 0);
         }
 
-        if (affame)
+        // Vérifier si l'animal touche les bords avant ou arrière
+        if (transform.position.z <= -25 || transform.position.z >= 25)
         {
+            // Inverser la direction sur l'axe Z
+            direction.z = -direction.z;
 
-           
+            // Faire pivoter l'animal pour qu'il ne marche pas de reculons
+            transform.Rotate(0, 180, 0);
         }
-        
-      
-    }
-
-
-    void Manger()
-    {
-        affame = false;
     }
 }
