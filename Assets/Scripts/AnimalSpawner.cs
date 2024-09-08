@@ -5,12 +5,12 @@ using UnityEngine;
 public class SpawnAnimal : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-
-    private Vector3 spawnPos = new Vector3(-15, 0, 25);
-
+    private float spawnRangeX = 25;
+    private float spawnPosZ = 25;
     private float repeatDelay = 2f;
     private float nextDelay = 2f;
     private float progress;
+    public Vector3 spawnPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,8 @@ public class SpawnAnimal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+         spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+
         progress += Time.deltaTime;
 
         //Si le délai est atteint
