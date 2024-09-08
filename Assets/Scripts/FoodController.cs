@@ -5,8 +5,8 @@ using UnityEngine;
 public class FoodController : MonoBehaviour
 {
     private Rigidbody foodRB;
-    private float speed = 4f;
-    private float p = 5f;
+    private float speed = 5;
+    private float topBound = 15;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +17,12 @@ public class FoodController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        if (transform.position.z > p)
+        if (transform.position.z > topBound)
         {
             Destroy(gameObject);
         }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Animal"))
