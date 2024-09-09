@@ -18,6 +18,7 @@ public class AnimalController : MonoBehaviour
     private Animator animatorAnimal;
     private GameOverTrigger gameOverTrigger;
     public AudioClip sonManger;
+    private float limite = 10;
 
     private AudioSource audioSource;
 
@@ -47,7 +48,7 @@ public class AnimalController : MonoBehaviour
             transform.Translate(direction * speed * Time.deltaTime);
 
             // Vérifier si l'animal touche les bords gauche ou droit
-            if (transform.position.x <= -25 || transform.position.x >= 25)
+            if (transform.position.x <= -limite || transform.position.x >= limite)
             {
                 direction.x = -direction.x;
                 transform.Rotate(0, 180, 0);
