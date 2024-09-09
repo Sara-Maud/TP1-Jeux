@@ -315,10 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e7538cf0586094eb17f6bb9689b8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
-  affame: 1
-  animator: {fileID: 0}
-  moveSpeed: 1.5
+  sonManger: {fileID: 0}
 --- !u!1 &1606447877204161123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1479,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e7538cf0586094eb17f6bb9689b8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
-  affame: 1
-  animator: {fileID: 0}
-  moveSpeed: 1.5
+  sonManger: {fileID: 8300000, guid: 027a8a663e281ab48b1e377b42bd0c97, type: 3}

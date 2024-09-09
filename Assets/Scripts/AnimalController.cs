@@ -17,6 +17,9 @@ public class AnimalController : MonoBehaviour
     private bool gameOver = false;
     private Animator animatorAnimal;
     private GameOverTrigger gameOverTrigger;
+    public AudioClip sonManger;
+
+    private AudioSource audioSource;
 
 
 
@@ -26,14 +29,15 @@ public class AnimalController : MonoBehaviour
         direction = Vector3.forward;
         animatorAnimal = GetComponent<Animator>();
         gameOverTrigger = FindObjectOfType<GameOverTrigger>();
-
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
         if (gameOverTrigger != null && gameOverTrigger.IsGameOver())
         {
             Debug.Log("Game Over");
-            //animatorAnimal.SetTrigger("Death_b");
+            // animatorAnimal.SetTrigger("Death_b");
+
             return;
         }
 
@@ -57,7 +61,9 @@ public class AnimalController : MonoBehaviour
     {
         //transform.Translate(direction * speed * Time.deltaTime);
         Debug.Log("Manger");
-        animatorAnimal.SetTrigger("Eat_b");
+        //animatorAnimal.SetTrigger("Eat_b");
+        //Faire jouer le son de manger
+        audioSource.PlayOneShot(sonManger);
         estAffame = false;
 
 
