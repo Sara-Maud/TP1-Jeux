@@ -8,11 +8,13 @@ public class MoveDown : MonoBehaviour
 
     private Vector3 startPos;
     private float repeatWidth;
+    private GameOverTrigger gameOverTrigger;
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         repeatWidth = GetComponent<BoxCollider>().size.z / 2f;
+        gameOverTrigger = FindObjectOfType<GameOverTrigger>();
         if (gameObject.CompareTag("Animal"))
             transform.rotation = Quaternion.Euler(0, 90, 0);
     }
@@ -20,13 +22,16 @@ public class MoveDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * -1 * speed * Time.deltaTime, Space.World);
-        //environnement
-        if(gameObject.CompareTag("Environment"))
+        if (!gameOverTrigger.IsGameOver())
         {
-            if (transform.position.z < startPos.z - repeatWidth)
+            transform.Translate(Vector3.forward * -1 * speed * Time.deltaTime, Space.World);
+            //environnement
+            if (gameObject.CompareTag("Environment"))
             {
-                transform.position = startPos;
+                if (transform.position.z < startPos.z - repeatWidth)
+                {
+                    transform.position = startPos;
+                }
             }
         }
     }

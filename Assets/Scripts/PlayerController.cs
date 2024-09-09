@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private Vector3 spawnNourriturePos;
     public ParticleSystem particulesNourriture;
-
+    private GameOverTrigger gameOverTrigger;
 
     public GameObject[] projectilesPrefabs;
     public int projectileIndex;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        gameOverTrigger = FindObjectOfType<GameOverTrigger>();
     }
 
     // Update is called once per frame
@@ -30,16 +31,17 @@ public class PlayerController : MonoBehaviour
         //Faire bouger le personnage
         horizontalInput = Input.GetAxis("Horizontal");
 
-
-        if (gameObject.transform.position.x <= limite && gameObject.transform.position.x >= -limite)
-            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        else if (gameObject.transform.position.x > limite)
-            transform.position = new Vector3(limite, 0,-25);
-        else if(gameObject.transform.position.x < -limite)
-            transform.position = new Vector3(-limite, 0, -25);
-        //Faire spawner la nourriture
-        SpawnBouffe();
-        
+        if(!gameOverTrigger.IsGameOver())
+        {
+            if (gameObject.transform.position.x <= limite && gameObject.transform.position.x >= -limite)
+                transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+            else if (gameObject.transform.position.x > limite)
+                transform.position = new Vector3(limite, 0, -25);
+            else if (gameObject.transform.position.x < -limite)
+                transform.position = new Vector3(-limite, 0, -25);
+            //Faire spawner la nourriture
+            SpawnBouffe();
+        }
     }
     //Méthode pour faire spawner la nourriture
     void SpawnBouffe()
