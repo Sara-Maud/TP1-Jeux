@@ -6,7 +6,7 @@ public class SpawnAnimal : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
     private float spawnRangeX = 10;
-    private float spawnZ = -10;
+    private float spawnZ = -13;
 
     private float repeatDelay = 2f;
     private float nextDelay = 5f;
