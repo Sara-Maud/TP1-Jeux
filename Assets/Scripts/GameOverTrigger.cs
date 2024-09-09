@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool isGameOver = false;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Animal"))
+        {
+            isGameOver = true;
+            // Vous pouvez ajouter d'autres actions ici si nécessaire
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsGameOver()
     {
-        
+        return isGameOver;
     }
 }

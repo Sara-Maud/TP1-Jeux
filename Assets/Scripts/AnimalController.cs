@@ -11,19 +11,31 @@ public class AnimalController : MonoBehaviour
             ➢ Si gameOver, l’animal doit agir d’une autre façon (au choix de l’étudiant)*/
 
 
-    public float speed = 3f;
+    private float speed = 3f;
     private Vector3 direction;
     private bool estAffame = true;
     private bool gameOver = false;
+    private Animator animatorAnimal;
+    private GameOverTrigger gameOverTrigger;
+
 
 
     void Start()
     {
         // Initialiser la direction de l'animal
         direction = Vector3.forward;
+        animatorAnimal = GetComponent<Animator>();
+        gameOverTrigger = FindObjectOfType<GameOverTrigger>();
+
     }
     void Update()
     {
+        if (gameOverTrigger != null && gameOverTrigger.IsGameOver())
+        {
+            Debug.Log("Game Over");
+            animatorAnimal.SetTrigger("Death_b");
+            return;
+        }
 
         if (estAffame)
         {
@@ -36,16 +48,27 @@ public class AnimalController : MonoBehaviour
                 direction.x = -direction.x;
                 transform.Rotate(0, 180, 0);
             }
-
-            if (transform.position.z <= -25 )
-            {
-                gameOver = true;
-                Debug.Log("Game Over");
-            }
         }
-        else
+       
+    }
+    
+
+    public void Manger()
+    {
+        //transform.Translate(direction * speed * Time.deltaTime);
+        Debug.Log("Manger");
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
         {
-        }
+            estAffame = false;
 
+            animatorAnimal.SetTrigger("Eat_b");
+
+
+        }
     }
 }

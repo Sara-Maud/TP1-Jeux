@@ -327,11 +327,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefabs:
-  - {fileID: 5825118696360899996, guid: 4a514c2b0a9d18d40af6e9395c7a4a2a, type: 3}
-  - {fileID: 8279416101207581018, guid: 8ee4e5c4efc2a614d9083d433005c6f6, type: 3}
-  - {fileID: 1860848136988838113, guid: 8dd485189b44a2549a661aaac98d7a4d, type: 3}
-  - {fileID: 5752144604596890866, guid: 3747512db2a0edd4ba7fb68b22bd7096, type: 3}
-  - {fileID: 4779261135126680529, guid: dace735e03618654a988484e60034916, type: 3}
+  - {fileID: 4779261135126680529, guid: c6587da769f427241a7ae644dc7f5aa3, type: 3}
+  - {fileID: 5752144604596890866, guid: f9325063370186043bcc918b8fa45923, type: 3}
+  - {fileID: 1860848136988838113, guid: 2c7d90c66c1cffa449026ea7b8be93fe, type: 3}
+  - {fileID: 8279416101207581018, guid: 6a793c6aafe9c974a830fe8cf8fb591f, type: 3}
+  - {fileID: 2545867519343013495, guid: 6c385e35a32638145ac5b798c34ec9e9, type: 3}
   spawnPos: {x: -15, y: 2, z: 25}
 --- !u!4 &319774177
 Transform:
@@ -1347,6 +1347,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4835015475376018884, guid: 7169122e91e1981469b2b6045ddf7963, type: 3}
+      propertyPath: m_Size.x
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
