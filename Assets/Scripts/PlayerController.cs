@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRB;
     private Animator playerAnim;
     private Vector3 spawnNourriturePos;
-    private ParticleSystem particules;
+    public ParticleSystem particulesNourriture;
 
 
     public GameObject[] projectilesPrefabs;
@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
 
     private float speed = 10f;
     public float horizontalInput;
-    public float limiteDroite = 12;
-    public float limiteGauche = -12;
+    public float limite = 12f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +31,12 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
 
-        if (gameObject.transform.position.x <= limiteDroite && gameObject.transform.position.x >= limiteGauche)
+        if (gameObject.transform.position.x <= limite && gameObject.transform.position.x >= -limite)
             transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
-        else if (gameObject.transform.position.x > limiteDroite)
-            transform.position = new Vector3(limiteDroite, 0,-25);
-        else if(gameObject.transform.position.x < limiteGauche)
-            transform.position = new Vector3(limiteGauche, 0, -25);
+        else if (gameObject.transform.position.x > limite)
+            transform.position = new Vector3(limite, 0,-25);
+        else if(gameObject.transform.position.x < -limite)
+            transform.position = new Vector3(-limite, 0, -25);
         //Faire spawner la nourriture
         SpawnBouffe();
         
@@ -48,6 +47,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerAnim.SetTrigger("Tir_Trig");
+            particulesNourriture.Play();
             int projectileIndex = Random.Range(0, projectilesPrefabs.Length);
             spawnNourriturePos = new Vector3(transform.position.x + 1, transform.position.y + 2, transform.position.z);
             Instantiate(projectilesPrefabs[projectileIndex], spawnNourriturePos, projectilesPrefabs[projectileIndex].transform.rotation);
