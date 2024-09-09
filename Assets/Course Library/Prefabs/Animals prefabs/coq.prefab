@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 2529157721832956315}
   - component: {fileID: 6258515213190926817}
   - component: {fileID: 1014233098335975681}
+  - component: {fileID: -2409428068347481029}
   m_Layer: 0
   m_Name: coq
   m_TagString: Animal
@@ -420,8 +421,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 30, z: 20}
-  m_Center: {x: 0, y: 15, z: 0}
+  m_Size: {x: 10, y: 35, z: 20}
+  m_Center: {x: 0, y: 17.5, z: 0}
+--- !u!114 &-2409428068347481029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860848136988838113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e7538cf0586094eb17f6bb9689b8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1974383749720107717
 GameObject:
   m_ObjectHideFlags: 0

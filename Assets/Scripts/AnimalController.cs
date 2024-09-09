@@ -13,6 +13,9 @@ public class AnimalController : MonoBehaviour
 
     public float speed = 3f;
     private Vector3 direction;
+    private bool estAffame = true;
+    private bool gameOver = false;
+
 
     void Start()
     {
@@ -21,27 +24,28 @@ public class AnimalController : MonoBehaviour
     }
     void Update()
     {
-        // Déplacer l'animal dans la direction actuelle
-        transform.Translate(direction * speed * Time.deltaTime);
 
-        // Vérifier si l'animal touche les bords gauche ou droit
-        if (transform.position.x <= -25 || transform.position.x >= 25)
+        if (estAffame)
         {
-            // Inverser la direction sur l'axe X
-            direction.x = -direction.x;
+            // Déplacer l'animal dans la direction actuelle
+            transform.Translate(direction * speed * Time.deltaTime);
 
-            // Faire pivoter l'animal pour qu'il ne marche pas de reculons
-            transform.Rotate(0, 180, 0);
+            // Vérifier si l'animal touche les bords gauche ou droit
+            if (transform.position.x <= -25 || transform.position.x >= 25)
+            {
+                direction.x = -direction.x;
+                transform.Rotate(0, 180, 0);
+            }
+
+            if (transform.position.z <= -25 )
+            {
+                gameOver = true;
+                Debug.Log("Game Over");
+            }
+        }
+        else
+        {
         }
 
-        // Vérifier si l'animal touche les bords avant ou arrière
-        if (transform.position.z <= -25 || transform.position.z >= 25)
-        {
-            // Inverser la direction sur l'axe Z
-            direction.z = -direction.z;
-
-            // Faire pivoter l'animal pour qu'il ne marche pas de reculons
-            transform.Rotate(0, 180, 0);
-        }
     }
 }
