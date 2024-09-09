@@ -13,7 +13,7 @@ public class AnimalController : MonoBehaviour
 
     private float speed = 3f;
     private Vector3 direction;
-    private bool estAffame = true;
+    public bool estAffame = true;
     private bool gameOver = false;
     private Animator animatorAnimal;
     private GameOverTrigger gameOverTrigger;

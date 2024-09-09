@@ -20,7 +20,6 @@ public class GameOverTrigger : MonoBehaviour
         {
             isGameOver = true;
             audioSource.PlayOneShot(sonGameOver);
-            // Vous pouvez ajouter d'autres actions ici si nécessaire
         }
     }
 
