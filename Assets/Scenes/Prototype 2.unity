@@ -899,16 +899,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425934284}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -1522,7 +1522,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 0
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -5622,12 +5622,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425934284}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4835015475587204068}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1590138454
 GameObject:
@@ -5978,6 +5978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 791746942408652655, guid: 8bb7d265bd62af949a1e7c5968849cf6, type: 3}
+      propertyPath: particulesNourriture
+      value: 
+      objectReference: {fileID: 1425934286}
     - target: {fileID: 1223593799911302891, guid: 8bb7d265bd62af949a1e7c5968849cf6, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -6024,7 +6028,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4431961709461722029, guid: 8bb7d265bd62af949a1e7c5968849cf6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425934287}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 454021546300663505, guid: 8bb7d265bd62af949a1e7c5968849cf6, type: 3}
       insertIndex: -1
@@ -6042,7 +6049,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687c8f3ff60e7b04e8c42d9c689daf17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonGameOver: {fileID: 0}
+  sonGameOver: {fileID: 8300000, guid: 44360a4c12865e2488612a031fd59980, type: 3}
+--- !u!4 &4835015475587204068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4431961709461722029, guid: 8bb7d265bd62af949a1e7c5968849cf6, type: 3}
+  m_PrefabInstance: {fileID: 1981479295549299270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6052,4 +6064,3 @@ SceneRoots:
   - {fileID: 1981479295549299270}
   - {fileID: 319774177}
   - {fileID: 1017488669}
-  - {fileID: 1425934287}

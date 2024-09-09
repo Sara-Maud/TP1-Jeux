@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnAnimal : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-    private float spawnRangeX = 25;
+    private float spawnRangeX = 10;
     private float spawnMinZ = -10;
     private float spawnMaxZ = 25;
 
@@ -22,7 +22,7 @@ public class SpawnAnimal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, Random.Range(spawnMinZ, spawnMaxZ));
+         spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, 15);
 
         progress += Time.deltaTime;
 
