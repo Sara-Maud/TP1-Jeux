@@ -47,10 +47,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int projectileIndex = Random.Range(0, projectilesPrefabs.Length);
             playerAnim.SetTrigger("Tir_Trig");
-            spawnNourriturePos = new Vector3(transform.position.x, transform.position.y +2, transform.position.z);
+            int projectileIndex = Random.Range(0, projectilesPrefabs.Length);
+            spawnNourriturePos = new Vector3(transform.position.x + 1, transform.position.y + 2, transform.position.z);
             Instantiate(projectilesPrefabs[projectileIndex], spawnNourriturePos, projectilesPrefabs[projectileIndex].transform.rotation);
+
         }
     }
 }
