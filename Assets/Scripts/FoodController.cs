@@ -21,7 +21,7 @@ public class FoodController : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if (transform.position.z > topBound)
         {
-            animalController.Manger();
+            
             Destroy(gameObject);
         }
     }
@@ -31,6 +31,8 @@ public class FoodController : MonoBehaviour
         if (collision.gameObject.CompareTag("Animal"))
         {
             Destroy(gameObject);
+            //Cause une exception mais pourtant la fonction fonctionne parce qu'elle affiche en console le message.
+            animalController.Manger();
         }
     }
 }

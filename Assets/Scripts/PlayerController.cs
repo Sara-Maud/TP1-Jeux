@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRB;
     private Animator playerAnim;
     private Vector3 spawnNourriturePos;
+    private ParticleSystem particules;
 
 
     public GameObject[] projectilesPrefabs;

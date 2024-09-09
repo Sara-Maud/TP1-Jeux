@@ -33,7 +33,7 @@ public class AnimalController : MonoBehaviour
         if (gameOverTrigger != null && gameOverTrigger.IsGameOver())
         {
             Debug.Log("Game Over");
-            animatorAnimal.SetTrigger("Death_b");
+            //animatorAnimal.SetTrigger("Death_b");
             return;
         }
 
@@ -57,18 +57,11 @@ public class AnimalController : MonoBehaviour
     {
         //transform.Translate(direction * speed * Time.deltaTime);
         Debug.Log("Manger");
+        animatorAnimal.SetTrigger("Eat_b");
+        estAffame = false;
+
+
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Projectile"))
-        {
-            estAffame = false;
-
-            animatorAnimal.SetTrigger("Eat_b");
-
-
-        }
-    }
 }
