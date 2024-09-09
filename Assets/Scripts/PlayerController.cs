@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         //Faire bouger le personnage
         horizontalInput = Input.GetAxis("Horizontal");
 
-        if(!gameOverTrigger.IsGameOver())
+        if (!gameOverTrigger.IsGameOver())
         {
             if (gameObject.transform.position.x <= limite && gameObject.transform.position.x >= -limite)
                 transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(-limite, 0, -25);
             //Faire spawner la nourriture
             SpawnBouffe();
+        }
+        else
+        {
+            playerAnim.SetBool("Death_b", true);
+            playerAnim.SetInteger("DeathType_int", 2);
         }
     }
     //Méthode pour faire spawner la nourriture

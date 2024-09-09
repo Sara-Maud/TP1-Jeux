@@ -21,7 +21,7 @@ public class AnimalController : MonoBehaviour
     private float limite = 10;
 
     private AudioSource audioSource;
-
+    private float tempsAttente = 0f;
 
 
     void Start()
@@ -37,7 +37,10 @@ public class AnimalController : MonoBehaviour
         if (gameOverTrigger != null && gameOverTrigger.IsGameOver())
         {
             Debug.Log("Game Over");
-            // animatorAnimal.SetTrigger("Death_b");
+            animatorAnimal.SetFloat("Speed_f", 0f);
+            //Les animaux s'envolent
+            transform.Rotate(0, 2, 0);
+            transform.Translate(0, 0.001f, 0);
 
             return;
         }
@@ -54,6 +57,21 @@ public class AnimalController : MonoBehaviour
                 transform.Rotate(0, 180, 0);
             }
         }
+        else
+        {
+            animatorAnimal.SetBool("Eat_b", true);
+            animatorAnimal.SetFloat("Speed_f", 0f);
+            tempsAttente += Time.deltaTime;
+            if(tempsAttente >= 3f)
+            {
+                animatorAnimal.SetBool("Eat_b", false);
+                animatorAnimal.SetFloat("Speed_f", 0.8f);
+
+                transform.Translate(direction * speed * Time.deltaTime * 3);
+                if (transform.position.x >= 20 || transform.position.x <= -20)
+                    Destroy(gameObject);
+            }
+        }
        
     }
     
@@ -62,12 +80,9 @@ public class AnimalController : MonoBehaviour
     {
         //transform.Translate(direction * speed * Time.deltaTime);
         Debug.Log("Manger");
-        //animatorAnimal.SetTrigger("Eat_b");
         //Faire jouer le son de manger
         audioSource.PlayOneShot(sonManger);
         estAffame = false;
-
-
     }
 
 

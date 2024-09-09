@@ -14,9 +14,9 @@ public class GameOverTrigger : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (other.CompareTag("Animal"))
+        if (collider.CompareTag("Animal") && collider.gameObject.GetComponent<AnimalController>().estAffame)
         {
             isGameOver = true;
             audioSource.PlayOneShot(sonGameOver);

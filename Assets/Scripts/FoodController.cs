@@ -7,12 +7,11 @@ public class FoodController : MonoBehaviour
     private Rigidbody foodRB;
     private float speed = 15f;
     private float topBound = -4.85f;
-    private AnimalController animalController;
     // Start is called before the first frame update
+    
     void Start()
     {
         foodRB = GetComponent<Rigidbody>();
-        animalController = FindObjectOfType<AnimalController>();
     }
 
     // Update is called once per frame
@@ -31,8 +30,8 @@ public class FoodController : MonoBehaviour
         if (collision.gameObject.CompareTag("Animal"))
         {
             Destroy(gameObject);
-            //Cause une exception mais pourtant la fonction fonctionne parce qu'elle affiche en console le message.
-            animalController.Manger();
+
+            collision.gameObject.GetComponent<AnimalController>().Manger();
         }
     }
 }
