@@ -36,9 +36,9 @@ public class AnimalController : MonoBehaviour
     {
         if (gameOverTrigger != null && gameOverTrigger.IsGameOver())
         {
-            Debug.Log("Game Over");
             animatorAnimal.SetFloat("Speed_f", 0f);
-            //Les animaux s'envolent
+
+            //Les animaux s'envolent 
             transform.Rotate(0, 2, 0);
             transform.Translate(0, 0.001f, 0);
 
@@ -78,11 +78,12 @@ public class AnimalController : MonoBehaviour
 
     public void Manger()
     {
-        //transform.Translate(direction * speed * Time.deltaTime);
-        Debug.Log("Manger");
-        //Faire jouer le son de manger
-        audioSource.PlayOneShot(sonManger);
-        estAffame = false;
+        if (estAffame)
+        {
+            audioSource.PlayOneShot(sonManger);
+            estAffame = false;
+        }
+       
     }
 
 

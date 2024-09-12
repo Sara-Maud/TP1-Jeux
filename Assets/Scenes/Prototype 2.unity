@@ -248,9 +248,9 @@ MonoBehaviour:
   objectPrefabs:
   - {fileID: 2843548885568258816, guid: 775b22d222f5b8043b5325cb6d6f333d, type: 3}
   - {fileID: 2545867519343013495, guid: 6c385e35a32638145ac5b798c34ec9e9, type: 3}
-  - {fileID: 1860848136988838113, guid: 4b324ed48f5198e488542c7e71e8b38c, type: 3}
-  - {fileID: 4779261135126680529, guid: 5a1e7ffb82846a04fa1c74d78e0394d9, type: 3}
-  - {fileID: 5752144604596890866, guid: f180eb6fbdc0b6a4cb65cc9755acb8af, type: 3}
+  - {fileID: 4779261135126680529, guid: 5b450b4bf5f876e4d9c3cd18dff1098b, type: 3}
+  - {fileID: 5752144604596890866, guid: a9550519f38c2fc4db21a030a8a5dfe9, type: 3}
+  - {fileID: 1860848136988838113, guid: f31f23b58fbac2449abf8639fc8dffcf, type: 3}
   spawnPos: {x: -15, y: 2, z: 25}
 --- !u!4 &319774177
 Transform:

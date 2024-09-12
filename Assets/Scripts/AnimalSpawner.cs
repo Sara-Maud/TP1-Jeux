@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnAnimal : MonoBehaviour
 {
+    private GameOverTrigger gameOverTrigger;
     public GameObject[] objectPrefabs;
     private float spawnRangeX = 10;
     private float spawnZ = 0;
@@ -16,11 +17,17 @@ public class SpawnAnimal : MonoBehaviour
     void Start()
     {
         progress = 0f;
+        gameOverTrigger = FindObjectOfType<GameOverTrigger>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (!gameOverTrigger.IsGameOver())
+        {
+
+        
          spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnZ);
 
         progress += Time.deltaTime;
@@ -34,6 +41,7 @@ public class SpawnAnimal : MonoBehaviour
 
             //Prochain délai est aléatoire autour de repeatDelay
             nextDelay = Random.Range(0.85f * repeatDelay, 1.15f * repeatDelay);
+        }
         }
 
     }
