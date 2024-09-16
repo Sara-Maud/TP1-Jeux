@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e7538cf0586094eb17f6bb9689b8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estAffame: 1
   sonManger: {fileID: 8300000, guid: 027a8a663e281ab48b1e377b42bd0c97, type: 3}
 --- !u!82 &-9009457189256771637
 AudioSource:
@@ -1041,7 +1042,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
